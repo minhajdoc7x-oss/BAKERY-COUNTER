@@ -9,10 +9,14 @@ function undo(){
 
         updateDisplay();
 
-        // Play sound
+        // Play Undo Sound
         const sound = document.getElementById("undoSound");
+
         sound.pause();
         sound.currentTime = 0;
-        sound.play().catch(() => {});
+
+        sound.play().catch(function(error){
+            console.log("Audio Error:", error);
+        });
     }
 }
